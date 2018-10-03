@@ -1,0 +1,76 @@
+This file keeps a history of our git workshop
+
+# Starting a project
+mkdir soa2018_gitplay
+cd soa2018_gitplay/
+git init
+ls                                        # Folder looks empty
+ls -al                                    # We see a hidden .git/ folder
+
+# Create README.md file
+git status
+git add README.md
+git status
+git commit -m "Started README file"
+git status
+git log
+
+# Create app.rb file; modify README.md file
+git status
+git add app.rb
+git add README.md
+git status
+git commit -m "Basic application created"
+git status
+git log
+
+# Edit app.rb file only
+git status
+git add app.rb
+git status
+git commit -m "Added essential routes and documentation to app"
+git log
+git l                         # Special command created to show concise log info
+
+# Going back in time using commit IDs...
+git checkout 6eda3bf
+git l                         # Observe that HEAD (working directory) has changed
+git checkout b9c718a
+git l
+git checkout 6eda3bf
+git l
+git checkout master           # Use master branch pointer to return to tip of commits
+git l
+
+# Create a new branch "api"
+git branch api
+git l
+git checkout api              # Move into "api" branch
+git l
+
+# Create lib/ folder, create a new lib/api_lib.rb file; edit README.md
+git status
+git add .
+git status
+git commit -m "App integrates data from external API"
+git l
+
+# Jump between branches
+git checkout master
+git checkout api
+
+# Make more edits to files within "api branch"
+git add .
+git commit -m "App successfully parses external API data"
+git status
+git l
+
+# No fast-forward merge of "api" into "master"
+git checkout master
+git merge --no-ff api
+git l
+
+# Create history file in master branch
+cat history > history.txt     # Create then edit file
+git add .
+git commit -m "Store command line history in file"
