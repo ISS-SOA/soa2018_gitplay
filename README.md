@@ -9,3 +9,5 @@ Interface is created
 Data is now stored in a local database
 
 Documentation now available in this file
+
+Author Soumya & Vic
