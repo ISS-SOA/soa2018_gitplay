@@ -6,5 +6,6 @@ Main application file is app.rb
 Application parses data from external API
 
 Interface is created
+Data is now stored in a local database
 
 Documentation now available in this file
